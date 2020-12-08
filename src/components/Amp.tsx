@@ -2,6 +2,7 @@ import {CabinetType, PowerAmpType, PreAmpType} from 'marshall-code-api';
 import {connect, ConnectedProps} from 'react-redux';
 import '../codeApi';
 import {RootState} from '../reducers/rootReducer';
+import Delay from './Delay';
 import DisablableGroup from './helpers/DisablableGroup';
 import LabelWithDotValue from './helpers/LabelWithDotValue';
 import Modulation from './Modulation';
@@ -74,6 +75,14 @@ const Amp = (props: Props) => (
                     param2={props.modulationParam2}
                     param3={props.modulationParam3}
                     param4={props.modulationParam4}/>
+      </div>
+      <div className="col-6">
+        <Delay enabled={props.delayEnabled}
+               type={props.delayType}
+               time={(props.delayTimeMsb << 7) + props.delayTimeLsb}
+               param2={props.delayParam2}
+               param3={props.delayParam3}
+               param4={props.delayParam4}/>
       </div>
     </div>
   </div>
