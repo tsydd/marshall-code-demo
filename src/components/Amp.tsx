@@ -7,6 +7,7 @@ import DisablableGroup from './helpers/DisablableGroup';
 import LabelWithDotValue from './helpers/LabelWithDotValue';
 import Modulation from './Modulation';
 import Pedal from './Pedal';
+import Reverb from './Reverb';
 
 const mapState = (state: RootState) => ({
   connected: state.amp.connected,
@@ -83,6 +84,14 @@ const Amp = (props: Props) => (
                param2={props.delayParam2}
                param3={props.delayParam3}
                param4={props.delayParam4}/>
+      </div>
+      <div className="col-6">
+        <Reverb enabled={props.reverbEnabled}
+                type={props.reverbType}
+                param1={props.reverbParam1}
+                param2={props.reverbParam2}
+                param3={props.reverbParam3}
+                param4={props.reverbParam4}/>
       </div>
     </div>
   </div>
