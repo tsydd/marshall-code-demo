@@ -1,3 +1,5 @@
+import LabelWithValue from './LabelWithValue';
+
 interface Props {
   label: string
   value: number
@@ -10,10 +12,7 @@ function withDot(value: number) {
 }
 
 const LabelWithDotValue = (props: Props) => (
-  <div className="col text-center">
-    <div>{props.label}</div>
-    <span className="badge badge-dark">{withDot(props.value)}</span>
-  </div>
+  <LabelWithValue label={props.label} value={withDot(props.value)}/>
 );
 
 export default LabelWithDotValue;
