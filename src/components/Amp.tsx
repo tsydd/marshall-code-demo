@@ -4,6 +4,7 @@ import '../codeApi';
 import {RootState} from '../reducers/rootReducer';
 import DisablableGroup from './helpers/DisablableGroup';
 import LabelWithDotValue from './helpers/LabelWithDotValue';
+import Modulation from './Modulation';
 import Pedal from './Pedal';
 
 const mapState = (state: RootState) => ({
@@ -58,13 +59,21 @@ const Amp = (props: Props) => (
       </div>
     </div>
     <div className="row">
-      <div className="col">
+      <div className="col-6">
         <Pedal enabled={props.pedalEnabled}
                type={props.pedalType}
                param1={props.pedalParam1}
                param2={props.pedalParam2}
                param3={props.pedalParam3}
                param4={props.pedalParam4}/>
+      </div>
+      <div className="col-6">
+        <Modulation enabled={props.modulationEnabled}
+                    type={props.modulationType}
+                    param1={props.modulationParam1}
+                    param2={props.modulationParam2}
+                    param3={props.modulationParam3}
+                    param4={props.modulationParam4}/>
       </div>
     </div>
   </div>
