@@ -1,4 +1,5 @@
 import {CabinetType, PowerAmpType, PreAmpType} from 'marshall-code-api';
+import React from 'react';
 import {connect, ConnectedProps} from 'react-redux';
 import '../codeApi';
 import {RootState} from '../reducers/rootReducer';
@@ -13,10 +14,6 @@ const mapState = (state: RootState) => ({
   connected: state.amp.connected,
   dirty: state.amp.dirty,
   ...(state.amp.currentPatch),
-
-  preAmpType: PreAmpType[state.amp.currentPatch.preAmpType],
-  powerAmpType: PowerAmpType[state.amp.currentPatch.powerAmpType],
-  cabinetType: CabinetType[state.amp.currentPatch.cabinetType],
 });
 
 const connector = connect(mapState);
@@ -46,10 +43,10 @@ const Amp = (props: Props) => (
     </div>
     <div className="row">
       <div className="col">
-        <DisablableGroup name="Pre-Amp" enabled={props.preAmpEnabled} type={props.preAmpType}/>
+        <DisablableGroup name="Pre-Amp" enabled={props.preAmpEnabled} type={PreAmpType[props.preAmpType]}/>
       </div>
       <div className="col">
-        <DisablableGroup name="Power-Amp" enabled={props.powerAmpEnabled} type={props.powerAmpType}>
+        <DisablableGroup name="Power-Amp" enabled={props.powerAmpEnabled} type={PowerAmpType[props.powerAmpType]}>
           <div className="row">
             <LabelWithDotValue label="Presence" value={props.presence}/>
             <LabelWithDotValue label="Resonance" value={props.resonance}/>
@@ -57,7 +54,7 @@ const Amp = (props: Props) => (
         </DisablableGroup>
       </div>
       <div className="col">
-        <DisablableGroup name="Cabinet" enabled={props.cabinetEnabled} type={props.cabinetType}/>
+        <DisablableGroup name="Cabinet" enabled={props.cabinetEnabled} type={CabinetType[props.cabinetType]}/>
       </div>
     </div>
     <div className="row">

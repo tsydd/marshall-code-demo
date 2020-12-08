@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {create, Patch} from 'marshall-code-api';
+import {factory, Patch} from 'marshall-code-api';
 
 interface AmpState {
   connected: boolean,
@@ -12,7 +12,7 @@ const ampSlice = createSlice({
   name: 'amp',
   initialState: {
     connected: false,
-    currentPatch: create(),
+    currentPatch: factory.default(),
     dirty: false,
   } as AmpState,
   reducers: {

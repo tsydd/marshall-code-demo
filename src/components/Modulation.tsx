@@ -1,27 +1,7 @@
-import {ModulationType} from 'marshall-code-api';
+import {ChorusMode, FlangerMode, ModulationType, PhaserMode, TremoloMode} from 'marshall-code-api';
 import DisablableGroup from './helpers/DisablableGroup';
 import LabelWithDotValue from './helpers/LabelWithDotValue';
 import LabelWithValue from './helpers/LabelWithValue';
-
-enum ChorusMode {
-  CLS,
-  VIB,
-}
-
-enum FlangerMode {
-  JET,
-  MET,
-}
-
-enum PhaserMode {
-  CLS,
-  VBE,
-}
-
-enum TremoloMode {
-  VLV,
-  SQR,
-}
 
 interface Props {
   enabled: boolean,
@@ -65,7 +45,7 @@ const Modulation = (props: Props) => {
         <LabelWithDotValue label="Speed" value={props.param1}/>
         <LabelWithDotValue label="Depth" value={props.param2}/>
         <LabelWithValue label="Skew" value={props.param4 - 50}/>
-      </div>
+      </div>;
       break;
   }
   return (

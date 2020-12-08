@@ -1,18 +1,7 @@
-import {PedalType} from 'marshall-code-api';
+import {AutoWahMode, DistortionMode, PedalType} from 'marshall-code-api';
 import DisablableGroup from './helpers/DisablableGroup';
 import LabelWithDotValue from './helpers/LabelWithDotValue';
 import LabelWithValue from './helpers/LabelWithValue';
-
-enum DistortionMode {
-  GUV,
-  ODR,
-  DIS,
-}
-
-enum AutoWahMode {
-  ENV,
-  FLO,
-}
 
 interface Props {
   enabled: boolean,
